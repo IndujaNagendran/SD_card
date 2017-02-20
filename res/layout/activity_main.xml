@@ -1,45 +1,46 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:layout_gravity="center"
-    tools:context=".MainActivity" >
- 
-    <TextView
-        android:layout_width="fill_parent"
+    android:layout_width="fill_parent" android:layout_height="fill_parent"
+    android:orientation="vertical">
+
+    <TextView android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:gravity="center"
-        android:textAlignment="center"
-        android:text="Android Read/Write File" />
-    <EditText
-        android:layout_width="fill_parent"
+        android:text="Reading and Writing to External Storage"
+        android:textSize="24sp"/>
+
+    <EditText android:id="@+id/myInputText"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/fname"
-        android:hint="File Name" />
-    <EditText
-        android:layout_width="fill_parent"
-        android:layout_height="100px"
-        android:id="@+id/ftext"
-        android:hint="File Text" />
-    <Button
-        android:layout_width="fill_parent"
+        android:ems="10" android:lines="5"
+        android:minLines="3" android:gravity="top|left"
+        android:inputType="textMultiLine">
+
+        <requestFocus />
+    </EditText>
+
+    <LinearLayout
+    android:layout_width="match_parent" android:layout_height="wrap_content"
+    android:orientation="horizontal"
+        android:weightSum="1.0"
+        android:layout_marginTop="20dp">
+
+    <Button android:id="@+id/saveExternalStorage"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/btnwrite"
-        android:text="Write File" />
-    <EditText
-        android:layout_width="fill_parent"
+        android:text="SAVE"
+        android:layout_weight="0.5"/>
+
+    <Button android:id="@+id/getExternalStorage"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/fnameread"
-        android:hint="File Name" />
-       <Button
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/btnread"
-        android:text="Read File" />
-       <TextView
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/filecon" />
- 
+        android:layout_weight="0.5"
+        android:text="READ" />
+
+    </LinearLayout>
+
+    <TextView android:id="@+id/response"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" android:padding="5dp"
+        android:text=""
+        android:textAppearance="?android:attr/textAppearanceMedium" />
+
 </LinearLayout>
